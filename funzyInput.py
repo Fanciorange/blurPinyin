@@ -67,3 +67,24 @@ def get_blured_pinyin(py, BA_2_RF=0.5, RF_2_BA=0.5, back_2_front_nasal=0.5, fron
             final_py_mp[py]=py
         filtered_list[i] = final_py_mp[py]+tone[i]
     return ' '.join(filtered_list)
+
+
+def random_replace(lst, ratio, replace_value=''):
+    # 计算要替换的元素数量
+    num_elements_to_replace = int(len(lst) * ratio)
+
+    # 生成要替换的元素的索引列表
+    indices_to_replace = random.sample(range(len(lst)), num_elements_to_replace)
+
+    # 替换元素
+    for index in indices_to_replace:
+        lst[index] = replace_value
+
+    return lst
+def removeTone(py,ratio):
+    pyls =[item[:-1]  if len(item) and item[-1].isdigit() else item for item in py.split(" ")]
+    tonels = [item[-1] if len(item) and item[-1].isdigit() else '' for item in py.split(" ")]
+    tonels = random_replace(tonels,ratio)
+    for i in range(len(pyls)):
+        pyls[i]+=tonels[i]
+    return " ".join(pyls)

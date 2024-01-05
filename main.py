@@ -1,5 +1,5 @@
 
-from funzyInput import get_blured_pinyin,hz_2_py
+from funzyInput import get_blured_pinyin,hz_2_py,removeTone
 
 
 
@@ -20,4 +20,6 @@ if __name__ == '__main__':
     # 示例：获取带数字声调且声调在末尾的拼音字符串
     hanzi = "《课文春天来了》 是一篇初中语文课文 通常出现在七年级上册"
     py = hz_2_py(hanzi)
-    print(get_blured_pinyin(py,0.8,0.5,0.8,0.2,0.5))
+    pt = get_blured_pinyin(py,0.8,0.5,0.8,0.2,0.5)
+    pu =removeTone(pt,0.6)
+    print(pu)
