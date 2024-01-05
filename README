@@ -1,0 +1,8 @@
+一种5种不同的模糊发音：
+BA_2_RF 平舌->翘舌
+RF_2_BA 翘舌->平舌
+back_2_front_nasal  后鼻音-》前鼻音
+front_2_back_nasal  前鼻音-》后鼻音
+other  其他单声母
+
+看main 直接调用 参数比例设置在 0-1之间
