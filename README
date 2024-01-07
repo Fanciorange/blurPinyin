@@ -6,4 +6,5 @@ front_2_back_nasal  前鼻音-》后鼻音
 other  其他单声母
 
 看main 直接调用 参数比例设置在 0-1之间
-get_blured_pinyin
+get_blured_pinyin 后5个参数设置不同规则下模糊比例 
+removeTone  ratio参数表示随机去掉声调的比例
